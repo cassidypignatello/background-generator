@@ -4,7 +4,9 @@ var color2 = document.querySelector('.color2');
 var body = document.querySelector('body');
 
 function setGradient() {
-  body.style.background = 'linear-gradient(to right, ' + color1.value + ', ' +  color2.value + ')';
+  var background = body.style.background;
+  background = 'linear-gradient(to right, ' + color1.value + ', ' +  color2.value + ')';
+  css.textContent = background + ';';
 }
 
 color1.addEventListener('input', setGradient);
