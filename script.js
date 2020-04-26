@@ -10,7 +10,11 @@ function setGradient() {
 }
 
 function randomizeColors() {
-  body.style.background = 'linear-gradient(to right, ' + getRandomColor() + ', ' +  getRandomColor() + ')';
+  var firstColor = getRandomColor();
+  var secondColor = getRandomColor();
+  body.style.background = 'linear-gradient(to right, ' + firstColor + ', ' +  secondColor + ')';
+  color1.value = firstColor;
+  color2.value = secondColor;
   css.textContent = body.style.background + ';';
 }
 
