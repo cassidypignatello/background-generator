@@ -5,17 +5,25 @@ var body = document.querySelector('body');
 var random = document.querySelector('button');
 
 function setGradient() {
-  body.style.background = 'linear-gradient(to right, ' + color1.value + ', ' +  color2.value + ')';
-  css.textContent = body.style.background + ';';
+  setColors(color1.value, color2.value);
+  setCSSText();
 }
 
 function randomizeColors() {
-  var firstColor = getRandomColor();
-  var secondColor = getRandomColor();
+  var first = getRandomColor();
+  var second = getRandomColor();
+  setColors(first, second);
+  color1.value = first;
+  color2.value = second;
+  setCSSText();
+}
+
+function setColors(firstColor, secondColor) {
   body.style.background = 'linear-gradient(to right, ' + firstColor + ', ' +  secondColor + ')';
-  color1.value = firstColor;
-  color2.value = secondColor;
-  css.textContent = body.style.background + ';';
+}
+
+function setCSSText() {
+  return css.textContent = body.style.background + ';';
 }
 
 function getRandomColor() {
